@@ -264,6 +264,8 @@ export default (app, featureFlagRouter: FlagRouter) => {
 /**
  * @schema AdminOrdersRes
  * type: object
+ * required:
+ *   - order
  * properties:
  *   order:
  *     $ref: "#/components/schemas/Order"
@@ -275,6 +277,11 @@ export type AdminOrdersRes = {
 /**
  * @schema AdminOrdersListRes
  * type: object
+ * required:
+ *   - orders
+ *   - count
+ *   - offset
+ *   - limit
  * properties:
  *   orders:
  *     type: array
@@ -319,6 +326,7 @@ export const defaultAdminOrdersRelations = [
   "claims.shipping_methods",
   "claims.shipping_address",
   "claims.additional_items",
+  "claims.additional_items.variant",
   "claims.fulfillments",
   "claims.fulfillments.tracking_links",
   "claims.claim_items",
@@ -334,6 +342,7 @@ export const defaultAdminOrdersRelations = [
   "swaps.shipping_methods.tax_lines",
   "swaps.shipping_address",
   "swaps.additional_items",
+  "swaps.additional_items.variant",
   "swaps.fulfillments",
   "swaps.fulfillments.tracking_links",
 ]

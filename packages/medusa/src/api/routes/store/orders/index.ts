@@ -75,7 +75,6 @@ export const defaultStoreOrdersRelations = [
   "fulfillments.tracking_links",
   "items",
   "items.variant",
-  "items.variant.product",
   "shipping_methods",
   "discounts",
   "discounts.rule",
@@ -130,6 +129,8 @@ export const allowedStoreOrdersFields = [
 /**
  * @schema StoreOrdersRes
  * type: object
+ * required:
+ *   - order
  * properties:
  *   order:
  *     $ref: "#/components/schemas/Order"
