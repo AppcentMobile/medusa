@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 
 import { EntityManager } from "typeorm"
-import { SalesChannelService } from "../../../../services/"
+import { SalesChannelService } from "../../../../services"
 
 /**
  * @oas [delete] /admin/sales-channels/{id}

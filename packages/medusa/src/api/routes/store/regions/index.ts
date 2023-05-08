@@ -1,6 +1,6 @@
 import { Router } from "express"
 import middlewares from "../../../middlewares"
-import { Region } from "./../../../../"
+import { Region } from "../../../.."
 
 const route = Router()
 

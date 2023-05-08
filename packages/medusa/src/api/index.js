@@ -54,6 +54,8 @@ export * from "./routes/admin/tax-rates"
 export * from "./routes/admin/uploads"
 export * from "./routes/admin/users"
 export * from "./routes/admin/variants"
+export * from "./routes/admin/groups"
+export * from "./routes/admin/roles"
 // Store
 export * from "./routes/store/auth"
 export * from "./routes/store/carts"

@@ -1,6 +1,6 @@
 import { Router } from "express"
 
-import { Swap } from "./../../../../"
+import { Swap } from "../../../.."
 import middlewares from "../../../middlewares"
 import { FindConfig } from "../../../../types/common"
 

@@ -7,9 +7,9 @@ import {
   TaxRate,
 } from "../models"
 import { TaxRateRepository } from "../repositories/tax-rate"
-import ProductService from "../services/product"
-import ProductTypeService from "../services/product-type"
-import ShippingOptionService from "../services/shipping-option"
+import ProductService from "./product"
+import ProductTypeService from "./product-type"
+import ShippingOptionService from "./shipping-option"
 import { FindConfig } from "../types/common"
 import {
   CreateTaxRateInput,

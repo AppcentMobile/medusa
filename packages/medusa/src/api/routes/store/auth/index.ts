@@ -1,6 +1,6 @@
 import { Router } from "express"
 import middlewares from "../../../middlewares"
-import { Customer } from "./../../../.."
+import { Customer } from "../../../.."
 
 const route = Router()
 

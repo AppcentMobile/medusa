@@ -1,4 +1,4 @@
-import { defaultAdminGiftCardFields, defaultAdminGiftCardRelations } from "./"
+import { defaultAdminGiftCardFields, defaultAdminGiftCardRelations } from "."
 
 /**
  * @oas [get] /admin/gift-cards/{id}

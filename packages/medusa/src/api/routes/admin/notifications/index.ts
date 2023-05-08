@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { Notification } from "./../../../../"
+import { Notification } from "../../../.."
 import middlewares from "../../../middlewares"
 
 const route = Router()

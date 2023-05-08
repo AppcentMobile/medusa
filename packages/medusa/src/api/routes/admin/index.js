@@ -41,6 +41,8 @@ import variantRoutes from "./variants"
 import paymentCollectionRoutes from "./payment-collections"
 import paymentRoutes from "./payments"
 import productCategoryRoutes from "./product-categories"
+import groupRoutes from "./groups"
+import roleRoutes from "./roles"
 import { parseCorsOrigins } from "medusa-core-utils"
 
 const route = Router()
@@ -116,6 +118,8 @@ export default (app, container, config) => {
   paymentCollectionRoutes(route)
   paymentRoutes(route)
   productCategoryRoutes(route)
+  groupRoutes(route)
+  roleRoutes(route)
 
   return app
 }

@@ -1,6 +1,6 @@
 import { isDefined, MedusaError } from "medusa-core-utils"
 import { EntityManager } from "typeorm"
-import { PaymentRepository } from "./../repositories/payment"
+import { PaymentRepository } from "../repositories/payment"
 
 import { TransactionBaseService } from "../interfaces"
 import { Payment, Refund } from "../models"

@@ -1,4 +1,4 @@
-import { ReturnReason } from "./../../../../"
+import { ReturnReason } from "../../../.."
 import { Router } from "express"
 import middlewares from "../../../middlewares"
 

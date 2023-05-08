@@ -1,5 +1,5 @@
 import { pick } from "lodash"
-import { defaultAdminTaxRatesFields, defaultAdminTaxRatesRelations } from "../"
+import { defaultAdminTaxRatesFields, defaultAdminTaxRatesRelations } from ".."
 import { TaxRate } from "../../../../.."
 import { FindConfig } from "../../../../../types/common"
 import { isDefined } from "medusa-core-utils"

@@ -1,7 +1,7 @@
 import "reflect-metadata"
 import { Router } from "express"
 
-import { Cart, Order, Swap } from "../../../../"
+import { Cart, Order, Swap } from "../../../.."
 import { FindParams } from "../../../../types/common"
 import middlewares, {
   transformBody,

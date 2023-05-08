@@ -14,6 +14,7 @@ type Options = {
   customOptions?: {
     migrations: DataSourceOptions["migrations"]
     logging: DataSourceOptions["logging"]
+    synchronize: DataSourceOptions["synchronize"]
   }
 }
 
@@ -49,6 +50,7 @@ export default async ({
     schema: configModule.projectConfig.database_schema,
     entities,
     migrations: customOptions?.migrations,
+    synchronize: true,
     logging:
       customOptions?.logging ??
       (configModule.projectConfig.database_logging || false),

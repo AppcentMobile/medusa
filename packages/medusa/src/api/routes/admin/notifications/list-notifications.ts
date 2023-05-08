@@ -2,7 +2,7 @@ import { IsBooleanString, IsInt, IsOptional, IsString } from "class-validator"
 import {
   defaultAdminNotificationsFields,
   defaultAdminNotificationsRelations,
-} from "./"
+} from "."
 import { Notification } from "../../../../models"
 import { FindConfig } from "../../../../types/common"
 

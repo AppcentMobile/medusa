@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { PaymentProvider, Store, TaxProvider } from "./../../../../"
+import { PaymentProvider, Store, TaxProvider } from "../../../.."
 import middlewares from "../../../middlewares"
 import { ExtendedStoreDTO } from "../../../../types/store"
 

@@ -2773,6 +2773,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@casl/ability@npm:^6.4.0":
+  version: 6.4.0
+  resolution: "@casl/ability@npm:6.4.0"
+  dependencies:
+    "@ucast/mongo2js": ^1.3.0
+  checksum: 6efc52eeeee538008ec8a38ac7fa82c4d7bc212dacc698ab50d4e718ce6be5f4a9376f5c290e271a45f94a98f0e748827e360d91a982bd1462a4450c8cc2b1de
+  languageName: node
+  linkType: hard
+
 "@changesets/apply-release-plan@npm:^6.1.3":
   version: 6.1.3
   resolution: "@changesets/apply-release-plan@npm:6.1.3"
@@ -12103,6 +12112,42 @@ __metadata:
     "@typescript-eslint/types": 5.53.0
     eslint-visitor-keys: ^3.3.0
   checksum: 8723cb32b5e39b3fae05299e3bab0298323b9694198ae6a43d2dbc449cbda23934a35c70156c5b92df4b8a62eede982f74fe13bf9693f3b046fba0cb5aaf88cc
+  languageName: node
+  linkType: hard
+
+"@ucast/core@npm:^1.0.0, @ucast/core@npm:^1.4.1, @ucast/core@npm:^1.6.1":
+  version: 1.10.2
+  resolution: "@ucast/core@npm:1.10.2"
+  checksum: bc24a2b02d796b5c14353aaf1c8faf8103157695522e82e9d6d7813a300e631a406d4809030c582bda99a72232a8eb19f25b4d78857f1c9fab2e8fb2028706e8
+  languageName: node
+  linkType: hard
+
+"@ucast/js@npm:^3.0.0":
+  version: 3.0.3
+  resolution: "@ucast/js@npm:3.0.3"
+  dependencies:
+    "@ucast/core": ^1.0.0
+  checksum: 52c689e136c692a5f25090c2123d7659979009193c9dc6173a26133b76a35fc8dc3a290e6143ccdd7f11dbcf20925dc055c0fb8e5941669a7ff1a0feb41c4c4f
+  languageName: node
+  linkType: hard
+
+"@ucast/mongo2js@npm:^1.3.0":
+  version: 1.3.4
+  resolution: "@ucast/mongo2js@npm:1.3.4"
+  dependencies:
+    "@ucast/core": ^1.6.1
+    "@ucast/js": ^3.0.0
+    "@ucast/mongo": ^2.4.0
+  checksum: 40f3d862f196b052e1beb1fff08ff7e4393e9bc9f2a037cc1dbe3f4235d0851fc3f561bed1d12d3c4a29d785b9880ab4c1aaffb66b67ecd8f68972245c514570
+  languageName: node
+  linkType: hard
+
+"@ucast/mongo@npm:^2.4.0":
+  version: 2.4.3
+  resolution: "@ucast/mongo@npm:2.4.3"
+  dependencies:
+    "@ucast/core": ^1.4.1
+  checksum: 3b806014f5754594faae5045f778e330c03216904895116ad524bd5e57e24875d7994add478e873628b5b2406d8c4cbce6e3eba5a7c6591924e4226e956d78b6
   languageName: node
   linkType: hard
 
@@ -35391,6 +35436,7 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/register": ^7.11.5
     "@babel/runtime": ^7.11.2
+    "@casl/ability": ^6.4.0
     "@changesets/changelog-github": ^0.4.8
     "@changesets/cli": ^2.26.0
     "@linear/sdk": ^1.22.0
@@ -35426,7 +35472,7 @@ __metadata:
     ts-node: ^10.9.1
     turbo: ^1.6.3
     typedoc: 0.23.10
-    typedoc-frontmatter-plugin: "link:docs-util/typedoc-plugins/typedoc-frontmatter-plugin"
+    typedoc-frontmatter-plugin: "file:docs-util/typedoc-plugins/typedoc-frontmatter-plugin"
     typedoc-monorepo-link-types: ^0.0.2
     typedoc-plugin-markdown: ^3.13.4
     typedoc-plugin-merge-modules: ^4.0.1
@@ -38899,11 +38945,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc-frontmatter-plugin@link:docs-util/typedoc-plugins/typedoc-frontmatter-plugin::locator=root%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "typedoc-frontmatter-plugin@link:docs-util/typedoc-plugins/typedoc-frontmatter-plugin::locator=root%40workspace%3A."
+"typedoc-frontmatter-plugin@file:docs-util/typedoc-plugins/typedoc-frontmatter-plugin::locator=root%40workspace%3A.":
+  version: 1.0.0
+  resolution: "typedoc-frontmatter-plugin@file:docs-util/typedoc-plugins/typedoc-frontmatter-plugin#docs-util/typedoc-plugins/typedoc-frontmatter-plugin::hash=42e2e6&locator=root%40workspace%3A."
+  peerDependencies:
+    typedoc: 0.22.x
+  checksum: 6cbe70d926e7261424df48ec354699e5967b48e59d4d32cdbc367bedf6bb7e39f15d0a714e3c0ec7d3d9dcdb05b6877068977677fa05a82574575bd4fdfbbccb
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "typedoc-monorepo-link-types@npm:^0.0.2":
   version: 0.0.2

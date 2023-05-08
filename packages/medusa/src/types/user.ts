@@ -1,5 +1,7 @@
+import { RawRuleOf } from "@casl/ability"
 import { User, UserRoles } from "../models/user"
 import { PartialPick } from "./common"
+import { AppAbility } from "../services/appAbility"
 
 export interface CreateUserInput {
   id?: string
@@ -9,6 +11,7 @@ export interface CreateUserInput {
   api_token?: string
   role?: UserRoles
   metadata?: Record<string, unknown>
+  permissions: RawRuleOf<AppAbility>[]
 }
 
 export interface UpdateUserInput {
@@ -19,6 +22,7 @@ export interface UpdateUserInput {
   api_token?: string
   role?: UserRoles
   metadata?: Record<string, unknown>
+  permissions: RawRuleOf<AppAbility>[]
 }
 
 export enum UserRole {
