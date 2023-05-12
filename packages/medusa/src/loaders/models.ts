@@ -21,6 +21,7 @@ export default (
     cwd: __dirname,
     ignore: ["index.js", "index.ts"],
   })
+  
   core.forEach((fn) => {
     const loaded = require(fn) as ClassConstructor<unknown> | EntitySchema
     if (loaded) {
@@ -32,10 +33,8 @@ export default (
               container.register({
                 [name]: asClass(val as ClassConstructor<unknown>),
               })
-
               container.registerAdd("db_entities", asValue(val))
             }
-
             models.push(val)
           }
         }

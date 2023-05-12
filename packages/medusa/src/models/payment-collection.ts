@@ -87,7 +87,7 @@ export class PaymentCollection extends SoftDeletableEntity {
   })
   payments: Payment[]
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   metadata: Record<string, unknown>
 
   @Column()

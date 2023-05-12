@@ -13,7 +13,7 @@ import { ProductVariant } from "./product-variant"
 @Entity()
 export class ProductVariantInventoryItem extends SoftDeletableEntity {
   @Index()
-  @Column({ type: "text" })
+  @Column({type: "varchar", length: 200 })
   inventory_item_id: string
 
   @Index()

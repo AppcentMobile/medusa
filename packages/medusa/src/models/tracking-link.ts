@@ -23,7 +23,7 @@ export class TrackingLink extends SoftDeletableEntity {
   @Column({ nullable: true })
   idempotency_key: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

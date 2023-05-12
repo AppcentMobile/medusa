@@ -3,6 +3,7 @@ import {
   DataSourceOptions,
   Repository,
   TreeRepository,
+  createConnection,
 } from "typeorm"
 import { AwilixContainer } from "awilix"
 import { ConfigModule } from "../types/global"
@@ -41,12 +42,26 @@ export default async ({
 
   const isSqlite = configModule.projectConfig.database_type === "sqlite"
 
+  // dataSource = new DataSource({
+  //   type: configModule.projectConfig.database_type,
+  //   url: configModule.projectConfig.database_url,
+  //   database: configModule.projectConfig.database_database,
+  //   extra: configModule.projectConfig.database_extra || {},
+  //   schema: configModule.projectConfig.database_schema,
+  //   entities,
+  //   migrations: customOptions?.migrations,
+  //   logging:
+  //     customOptions?.logging ??
+  //     (configModule.projectConfig.database_logging || false),
+  // } as DataSourceOptions)
+
   dataSource = new DataSource({
-    type: configModule.projectConfig.database_type,
-    url: configModule.projectConfig.database_url,
-    database: configModule.projectConfig.database_database,
-    extra: configModule.projectConfig.database_extra || {},
-    schema: configModule.projectConfig.database_schema,
+    type: "mysql",
+    host: "127.0.0.1",
+    port: 3306,
+    username: "root",
+    password: "27038181976",
+    database: "test",
     entities,
     migrations: customOptions?.migrations,
     logging:
@@ -54,7 +69,11 @@ export default async ({
       (configModule.projectConfig.database_logging || false),
   } as DataSourceOptions)
 
+  console.log(dataSource);
+  
   await dataSource.initialize()
+
+  console.log(dataSource);
 
   if (isSqlite) {
     await dataSource.query(`PRAGMA foreign_keys = OFF`)

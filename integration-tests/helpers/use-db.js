@@ -27,7 +27,7 @@ const keepTables = [
   "currency",
 ]
 
-let dataSourceType = "postgresql"
+let dataSourceType = "mysql"
 
 const DbTestUtil = {
   db_: null,
@@ -139,8 +139,8 @@ module.exports = {
       )
 
       const dbDataSource = new DataSource({
-        type: "postgres",
-        url: DB_URL,
+        type: "mysql",
+        // url: DB_URL,
         entities: enabledEntities.concat(moduleModels),
         migrations: enabledMigrations.concat(moduleMigrations),
         extra: database_extra ?? {},

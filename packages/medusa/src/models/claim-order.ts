@@ -103,22 +103,22 @@ export class ClaimOrder extends SoftDeletableEntity {
   @Column({ type: "int", nullable: true })
   refund_amount: number
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   canceled_at: Date
 
-  @CreateDateColumn({ type: resolveDbType("timestamptz") })
+  @CreateDateColumn({ type: resolveDbType("datetime") })
   created_at: Date
 
-  @UpdateDateColumn({ type: resolveDbType("timestamptz") })
+  @UpdateDateColumn({ type: resolveDbType("datetime") })
   updated_at: Date
 
-  @DeleteDateColumn({ type: resolveDbType("timestamptz") })
+  @DeleteDateColumn({ type: resolveDbType("datetime") })
   deleted_at: Date
 
   @Column({ type: "boolean", nullable: true })
   no_notification: boolean
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @Column({ nullable: true })

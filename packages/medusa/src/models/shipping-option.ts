@@ -71,10 +71,10 @@ export class ShippingOption extends SoftDeletableEntity {
   })
   requirements: ShippingOptionRequirement[]
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @FeatureFlagColumn(TaxInclusivePricingFeatureFlag.key, { default: false })

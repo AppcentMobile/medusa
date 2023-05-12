@@ -94,7 +94,7 @@ export class Region extends SoftDeletableEntity {
   })
   fulfillment_providers: FulfillmentProvider[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @FeatureFlagColumn(TaxInclusivePricingFeatureFlag.key, { default: false })

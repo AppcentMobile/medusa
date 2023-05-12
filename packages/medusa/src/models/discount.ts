@@ -43,12 +43,12 @@ export class Discount extends SoftDeletableEntity {
   parent_discount: Discount
 
   @Column({
-    type: resolveDbType("timestamptz"),
+    type: resolveDbType("datetime"),
     default: () => "CURRENT_TIMESTAMP",
   })
   starts_at: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   ends_at: Date | null
 
   @Column({ type: String, nullable: true })
@@ -74,7 +74,7 @@ export class Discount extends SoftDeletableEntity {
   @Column({ default: 0 })
   usage_count: number
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

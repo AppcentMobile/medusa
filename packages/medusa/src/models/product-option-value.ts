@@ -36,7 +36,7 @@ export class ProductOptionValue extends SoftDeletableEntity {
   @JoinColumn({ name: "variant_id" })
   variant: ProductVariant
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

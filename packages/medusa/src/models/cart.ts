@@ -354,19 +354,19 @@ export class Cart extends SoftDeletableEntity {
   @DbAwareColumn({ type: "enum", enum: CartType, default: "default" })
   type: CartType
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   completed_at: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   payment_authorized_at: Date
 
   @Column({ nullable: true })
   idempotency_key: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   context: Record<string, unknown>
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @FeatureFlagColumn("sales_channels", { type: "varchar", nullable: true })

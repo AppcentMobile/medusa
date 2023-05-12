@@ -128,7 +128,7 @@ export class DiscountCondition extends SoftDeletableEntity {
   })
   customer_groups: CustomerGroup[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

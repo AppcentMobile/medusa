@@ -30,7 +30,7 @@ export class ProductOption extends SoftDeletableEntity {
   @JoinColumn({ name: "product_id" })
   product: Product
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

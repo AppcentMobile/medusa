@@ -11,10 +11,10 @@ export class StagedJob {
   @Column()
   event_name: string
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
-  @DbAwareColumn({ type: "jsonb", default: {} })
+  @DbAwareColumn({ type: "json" })
   options: Record<string, unknown>
 
   @BeforeInsert()

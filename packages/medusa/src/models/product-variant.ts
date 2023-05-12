@@ -100,7 +100,7 @@ export class ProductVariant extends SoftDeletableEntity {
   )
   inventory_items: ProductVariantInventoryItem[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

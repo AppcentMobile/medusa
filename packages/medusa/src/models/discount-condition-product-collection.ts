@@ -27,13 +27,13 @@ export class DiscountConditionProductCollection {
   @JoinColumn({ name: "condition_id" })
   discount_condition?: DiscountCondition
 
-  @CreateDateColumn({ type: resolveDbType("timestamptz") })
+  @CreateDateColumn({ type: resolveDbType("datetime") })
   created_at: Date
 
-  @UpdateDateColumn({ type: resolveDbType("timestamptz") })
+  @UpdateDateColumn({ type: resolveDbType("datetime") })
   updated_at: Date
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 }
 

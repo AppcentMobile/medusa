@@ -54,10 +54,10 @@ export class Store extends BaseEntity {
   @Column({ nullable: true, type: "text" })
   invite_link_template: string | null
 
-  @Column({ nullable: true })
-  default_location_id: string
+ @Column({ nullable: true, type: "varchar", length: 200 })
+  location_id: string | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown> | null
 
   @FeatureFlagColumn("sales_channels", { nullable: true, type: "text" })

@@ -12,7 +12,7 @@ export class TaxLine extends BaseEntity {
   @Column({ type: "varchar", nullable: true })
   code: string | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 }
 

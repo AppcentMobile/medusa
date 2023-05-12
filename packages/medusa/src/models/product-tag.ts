@@ -9,7 +9,7 @@ export class ProductTag extends SoftDeletableEntity {
   @Column()
   value: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

@@ -25,7 +25,7 @@ export class ClaimImage extends SoftDeletableEntity {
   @Column()
   url: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

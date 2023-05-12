@@ -40,7 +40,7 @@ export class DiscountRule extends SoftDeletableEntity {
   @OneToMany(() => DiscountCondition, (conditions) => conditions.discount_rule)
   conditions: DiscountCondition[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

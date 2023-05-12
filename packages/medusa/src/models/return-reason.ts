@@ -38,7 +38,7 @@ export class ReturnReason extends SoftDeletableEntity {
   )
   return_reason_children: ReturnReason[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

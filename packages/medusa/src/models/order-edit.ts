@@ -48,13 +48,13 @@ export class OrderEdit extends BaseEntity {
   @Column({ nullable: true })
   requested_by?: string // customer or user ID
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   requested_at?: Date
 
   @Column({ nullable: true })
   confirmed_by?: string // customer or user ID
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   confirmed_at?: Date
 
   @Column({ nullable: true })
@@ -63,13 +63,13 @@ export class OrderEdit extends BaseEntity {
   @Column({ nullable: true })
   declined_reason?: string
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   declined_at?: Date
 
   @Column({ nullable: true })
   canceled_by?: string
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   canceled_at?: Date
 
   @OneToMany(() => LineItem, (lineItem) => lineItem.order_edit)

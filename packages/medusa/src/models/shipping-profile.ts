@@ -26,7 +26,7 @@ export class ShippingProfile extends SoftDeletableEntity {
   @OneToMany(() => ShippingOption, (so) => so.profile)
   shipping_options: ShippingOption[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

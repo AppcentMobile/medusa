@@ -214,10 +214,10 @@ export class Order extends BaseEntity {
   @OneToMany(() => GiftCardTransaction, (gc) => gc.order)
   gift_card_transactions: GiftCardTransaction[]
 
-  @Column({ nullable: true, type: resolveDbType("timestamptz") })
+  @Column({ nullable: true, type: resolveDbType("datetime") })
   canceled_at: Date
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @Column({ type: "boolean", nullable: true })

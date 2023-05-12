@@ -49,7 +49,7 @@ export class Refund extends BaseEntity {
   @DbAwareColumn({ type: "enum", enum: RefundReason })
   reason: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @Column({ nullable: true })

@@ -45,7 +45,7 @@ export class GiftCard extends SoftDeletableEntity {
   is_disabled: boolean
 
   @Column({
-    type: resolveDbType("timestamptz"),
+    type: resolveDbType("datetime"),
     nullable: true,
   })
   ends_at: Date
@@ -53,7 +53,7 @@ export class GiftCard extends SoftDeletableEntity {
   @Column({ type: "real", nullable: true })
   tax_rate: number | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

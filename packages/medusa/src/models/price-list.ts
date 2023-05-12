@@ -31,12 +31,12 @@ export class PriceList extends SoftDeletableEntity {
   status: PriceListStatus
 
   @Column({
-    type: resolveDbType("timestamptz"),
+    type: resolveDbType("datetime"),
     nullable: true,
   })
   starts_at: Date | null
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   ends_at: Date | null
 
   @JoinTable({

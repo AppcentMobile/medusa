@@ -39,7 +39,7 @@ export class GiftCardTransaction {
   @Column("int")
   amount: number
 
-  @CreateDateColumn({ type: resolveDbType("timestamptz") })
+  @CreateDateColumn({ type: resolveDbType("datetime") })
   created_at: Date
 
   @Column({ nullable: true })

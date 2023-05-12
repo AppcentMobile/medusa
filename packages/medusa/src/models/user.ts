@@ -36,7 +36,7 @@ export class User extends SoftDeletableEntity {
   @Column({ nullable: true })
   api_token: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

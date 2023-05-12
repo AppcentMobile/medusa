@@ -12,7 +12,7 @@ export class SalesChannelLocation extends SoftDeletableEntity {
   sales_channel_id: string
 
   @Index()
-  @Column({ type: "text" })
+  @Column({ nullable: true, type: "varchar", length: 200 })
   location_id: string
 
   @ManyToOne(() => SalesChannel, (sc) => sc.locations)

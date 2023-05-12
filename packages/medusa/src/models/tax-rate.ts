@@ -34,7 +34,7 @@ export class TaxRate extends BaseEntity {
   @JoinColumn({ name: "region_id" })
   region: Region
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @ManyToMany(() => Product)

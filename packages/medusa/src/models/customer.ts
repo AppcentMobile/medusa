@@ -70,7 +70,7 @@ export class Customer extends SoftDeletableEntity {
   })
   groups: CustomerGroup[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

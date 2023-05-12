@@ -57,7 +57,7 @@ export class Address extends SoftDeletableEntity {
   @Column({ type: "varchar", nullable: true })
   phone: string | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

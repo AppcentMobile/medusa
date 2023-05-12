@@ -43,7 +43,7 @@ export class ReturnItem {
   @Column({ nullable: true })
   note: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 }
 

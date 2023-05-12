@@ -70,22 +70,22 @@ export class Return extends BaseEntity {
   shipping_method: ShippingMethod
 
   @Index()
-  @Column({ nullable: true, type: "text" })
+  @Column({ nullable: true, type: "varchar", length: 200 })
   location_id: string | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   shipping_data: Record<string, unknown>
 
   @Column({ type: "int" })
   refund_amount: number
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   received_at: Date
 
   @Column({ type: "boolean", nullable: true })
   no_notification: boolean | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown> | null
 
   @Column({ nullable: true, type: "text" })

@@ -37,7 +37,7 @@ export class ShippingOptionRequirement {
   @Column({ type: "int" })
   amount: number
 
-  @DeleteDateColumn({ type: resolveDbType("timestamptz") })
+  @DeleteDateColumn({ type: resolveDbType("datetime") })
   deleted_at: Date
 
   @BeforeInsert()

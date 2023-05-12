@@ -80,7 +80,7 @@ export class ClaimItem extends SoftDeletableEntity {
   })
   tags: ClaimTag[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

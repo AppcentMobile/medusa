@@ -18,7 +18,7 @@ export class ProductCollection extends SoftDeletableEntity {
   @OneToMany(() => Product, (product) => product.collection)
   products: Product[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

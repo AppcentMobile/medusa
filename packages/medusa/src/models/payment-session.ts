@@ -49,7 +49,7 @@ export class PaymentSession extends BaseEntity {
   @DbAwareColumn({ type: "enum", enum: PaymentSessionStatus })
   status: string
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
   @Column({ nullable: true })
@@ -58,7 +58,7 @@ export class PaymentSession extends BaseEntity {
   @Column({ type: "integer", nullable: true })
   amount: number
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   payment_authorized_at: Date
 
   @BeforeInsert()

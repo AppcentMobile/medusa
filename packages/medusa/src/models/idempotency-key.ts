@@ -19,16 +19,16 @@ export class IdempotencyKey {
   @Column()
   idempotency_key: string
 
-  @CreateDateColumn({ type: resolveDbType("timestamptz") })
+  @CreateDateColumn({ type: resolveDbType("datetime") })
   created_at: Date
 
-  @DbAwareColumn({ type: "timestamptz", nullable: true })
+  @DbAwareColumn({ type: "datetime", nullable: true })
   locked_at: Date
 
   @Column({ nullable: true })
   request_method: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   request_params: Record<string, unknown>
 
   @Column({ nullable: true })
@@ -37,7 +37,7 @@ export class IdempotencyKey {
   @Column({ type: "int", nullable: true })
   response_code: number
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   response_body: Record<string, unknown>
 
   @Column({ default: "started" })

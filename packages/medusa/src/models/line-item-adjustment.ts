@@ -43,7 +43,7 @@ export class LineItemAdjustment {
   @Column({ type: "numeric", transformer: { to: (value) => value, from: (value) => parseFloat(value) } })
   amount: number
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

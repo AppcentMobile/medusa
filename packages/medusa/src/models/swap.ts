@@ -94,10 +94,10 @@ export class Swap extends SoftDeletableEntity {
   @JoinColumn({ name: "cart_id" })
   cart: Cart
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   confirmed_at: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   canceled_at: Date
 
   @Column({ type: "boolean", nullable: true })
@@ -109,7 +109,7 @@ export class Swap extends SoftDeletableEntity {
   @Column({ nullable: true })
   idempotency_key: string
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

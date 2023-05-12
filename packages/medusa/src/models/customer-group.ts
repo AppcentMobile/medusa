@@ -22,7 +22,7 @@ export class CustomerGroup extends SoftDeletableEntity {
   })
   price_lists: PriceList[]
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

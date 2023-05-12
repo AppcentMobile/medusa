@@ -51,7 +51,7 @@ export class Fulfillment extends BaseEntity {
   @Column()
   provider_id: string
 
-  @Column({ nullable: true, type: "text" })
+  @Column({ nullable: true, type: "varchar", length: 200 })
   location_id: string | null
 
   @ManyToOne(() => FulfillmentProvider)
@@ -69,19 +69,20 @@ export class Fulfillment extends BaseEntity {
   })
   tracking_links: TrackingLink[]
 
-  @DbAwareColumn({ type: "jsonb", default: [] })
+  // @DbAwareColumn({ type: "json", default: [] })
+  @DbAwareColumn({ type: "json"})
   tracking_numbers: string[]
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   shipped_at: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   canceled_at: Date
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @Column({ nullable: true })

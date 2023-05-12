@@ -88,7 +88,7 @@ export class ShippingMethod {
   @Column({ type: "int" })
   price: number
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
   @FeatureFlagColumn(TaxInclusivePricingFeatureFlag.key, { default: false })

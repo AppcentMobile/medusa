@@ -29,10 +29,10 @@ export class BatchJob extends SoftDeletableEntity {
   @JoinColumn({ name: "created_by" })
   created_by_user: User
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   context: Record<string, unknown>
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   result: {
     count?: number
     advancement_count?: number
@@ -46,22 +46,22 @@ export class BatchJob extends SoftDeletableEntity {
   @Column({ type: "boolean", nullable: false, default: false })
   dry_run = false
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   pre_processed_at?: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   processing_at?: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   confirmed_at?: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   completed_at?: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   canceled_at?: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   failed_at?: Date
 
   status: BatchJobStatus

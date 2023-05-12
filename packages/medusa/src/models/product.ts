@@ -44,7 +44,7 @@ export class Product extends SoftDeletableEntity {
   description: string | null
 
   @Index({ unique: true, where: "deleted_at IS NULL" })
-  @Column({ type: "text", nullable: true })
+  @Column({ nullable: true, type: "varchar", length: 200 })
   handle: string | null
 
   @Column({ default: false })
@@ -158,7 +158,7 @@ export class Product extends SoftDeletableEntity {
   @Column({ type: "text", nullable: true })
   external_id: string | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown> | null
 
   @FeatureFlagDecorators("sales_channels", [

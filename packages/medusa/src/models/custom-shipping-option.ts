@@ -36,7 +36,7 @@ export class CustomShippingOption extends SoftDeletableEntity {
   @JoinColumn({ name: "cart_id" })
   cart: Cart
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

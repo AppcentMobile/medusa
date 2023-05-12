@@ -9,10 +9,23 @@ const pgSqliteTypeMapping: { [key: string]: ColumnType } = {
   enum: "text",
 }
 
+const pgMySqlTypeMapping: { [key: string]: ColumnType } = {
+  increment: "int",
+  timestamptz: "datetime",
+  jsonb: "json",
+  enum: "enum",
+}
+
 const pgSqliteGenerationMapping: {
   [key: string]: "increment" | "uuid" | "rowid"
 } = {
   increment: "rowid",
+}
+
+const pgMySqlGenerationMapping: {
+  [key: string]: "increment" | "uuid" | "rowid"
+} = {
+  increment: "increment",
 }
 
 let dbType: string
@@ -23,12 +36,15 @@ export function resolveDbType(pgSqlType: ColumnType): ColumnType {
       `medusa-config`
     ) as any
 
-    dbType = configModule?.projectConfig?.database_type || "postgres"
+    dbType = configModule?.projectConfig?.database_type || "mysql"
   }
-
+  // console.log(dbType);
   if (dbType === "sqlite" && (pgSqlType as string) in pgSqliteTypeMapping) {
     return pgSqliteTypeMapping[pgSqlType.toString()]
+  } else if (dbType === "mysql" && (pgSqlType as string) in pgMySqlTypeMapping) {
+    return pgMySqlTypeMapping[pgSqlType.toString()]
   }
+
   return pgSqlType
 }
 
@@ -46,7 +62,10 @@ export function resolveDbGenerationStrategy(
 
   if (dbType === "sqlite" && pgSqlType in pgSqliteTypeMapping) {
     return pgSqliteGenerationMapping[pgSqlType]
+  } else if (dbType === "mysql" && pgSqlType in pgMySqlTypeMapping) {
+    return pgMySqlGenerationMapping[pgSqlType]
   }
+
   return pgSqlType
 }
 

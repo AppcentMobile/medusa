@@ -135,7 +135,7 @@ export class LineItem extends BaseEntity {
   @Column({ nullable: true, type: "int" })
   shipped_quantity: number | null
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @FeatureFlagColumn(TaxInclusivePricingFeatureFlag.key, { default: false })

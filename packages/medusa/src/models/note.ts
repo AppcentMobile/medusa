@@ -32,7 +32,7 @@ export class Note extends SoftDeletableEntity {
   @JoinColumn({ name: "author_id" })
   author: User
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()

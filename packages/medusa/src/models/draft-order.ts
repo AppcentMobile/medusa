@@ -50,16 +50,16 @@ export class DraftOrder extends BaseEntity {
   @JoinColumn({ name: "order_id" })
   order: Order
 
-  @Column({ nullable: true, type: resolveDbType("timestamptz") })
+  @Column({ nullable: true, type: resolveDbType("datetime") })
   canceled_at: Date
 
-  @Column({ type: resolveDbType("timestamptz"), nullable: true })
+  @Column({ type: resolveDbType("datetime"), nullable: true })
   completed_at: Date
 
   @Column({ nullable: true })
   no_notification_order: boolean
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @Column({ nullable: true })

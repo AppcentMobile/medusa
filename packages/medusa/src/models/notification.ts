@@ -38,7 +38,7 @@ export class Notification extends BaseEntity {
   @Column()
   to: string
 
-  @DbAwareColumn({ type: "jsonb" })
+  @DbAwareColumn({ type: "json" })
   data: Record<string, unknown>
 
   @Column({ nullable: true })

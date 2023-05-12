@@ -25,10 +25,10 @@ export class Invite extends SoftDeletableEntity {
   @Column()
   token: string
 
-  @CreateDateColumn({ type: resolveDbType("timestamptz") })
+  @CreateDateColumn({ type: resolveDbType("datetime") })
   expires_at: Date
 
-  @DbAwareColumn({ type: "jsonb", nullable: true })
+  @DbAwareColumn({ type: "json", nullable: true })
   metadata: Record<string, unknown>
 
   @BeforeInsert()
