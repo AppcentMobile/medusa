@@ -1,6 +1,5 @@
 import { TransactionBaseService } from "./transaction-base-service"
-import BaseNotificationService from "../../../../../my-medusa-store/node_modules/medusa-interfaces/dist/notification-service"
-
+import BaseNotificationService from "medusa-interfaces/dist/notification-service"
 type ReturnedData = {
   to: string
   status: string
